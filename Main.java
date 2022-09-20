@@ -1,4 +1,4 @@
-/*
+/* 
  * Jason Boyett - jaboye2448
  * CIT 4423 01
  * Sept 20, 2022
@@ -10,7 +10,16 @@ import javax.swing.JOptionPane;
 public class Main{
     public static void main(String[] args) throws Exception {
         JFrame frame = new JFrame();
-        String pattern = findPattern(String.valueOf(JOptionPane.showInputDialog(frame,"enter some random characters!")), String.valueOf(JOptionPane.showInputDialog(frame,"enter the characters you want me to find")));
+        String findIn = JOptionPane.showInputDialog(frame,"enter some random characters!", "");
+        if(findIn.equals(null)){
+            System.exit(0);
+        }
+        String findThis = JOptionPane.showInputDialog(frame,"enter the characters you want me to find");
+        if(findThis.equals(null)){
+            System.exit(0);
+        }
+        System.out.println(findThis);
+        String pattern = findPattern(findIn, findThis);
         if(!pattern.equals("")) {
             JOptionPane.showMessageDialog(frame, "your pattern is" + pattern);
         }
@@ -21,6 +30,7 @@ public class Main{
     }
 
     public static String findPattern(String findIn, String findThis){
+        try{
         String pattern = "";
         for(int i = 0; i < findThis.length(); i++){
             for(int j = 0; j < findIn.length(); j++){
@@ -32,5 +42,10 @@ public class Main{
         
         }
         return pattern;
+        }
+        catch(Exception e){
+            System.exit(0);
+            return "";
+        }
     }
 }
