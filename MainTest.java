@@ -14,5 +14,6 @@ public class MainTest {
         assertEquals(" 4", Main.findPattern("asdfghj", "f"));
         assertEquals(" 12", Main.findPattern("aaaaaaaaaaa aaaaaaaaaaa", " "));
         assertEquals("", Main.findPattern("", "random"));
+        assertEquals(" 1 3 5", Main.findPattern("w o w", "wow"));
     }
 }

@@ -34,8 +34,9 @@ public class Main{
         String pattern = "";
         for(int i = 0; i < findThis.length(); i++){
             for(int j = 0; j < findIn.length(); j++){
-                if(findThis.charAt(i) == findIn.charAt(j)){
+                if(findThis.charAt(i) == findIn.substring(j).charAt(0)){
                     pattern += " " + String.valueOf(j + 1);
+                    findIn = findIn.substring(0,j) + " " + findIn.substring(j+1,findIn.length());
                     break;
                 }
             }
