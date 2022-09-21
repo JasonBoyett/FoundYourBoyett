@@ -14,7 +14,7 @@ public class Main{
         if(findIn.equals(null)){
             System.exit(0);
         }
-        String findThis = JOptionPane.showInputDialog(frame,"enter the characters you want me to find");
+        String findThis = JOptionPane.showInputDialog(frame,"enter the characters you want me to find.\n White space will be ignored!");
         if(findThis.equals(null)){
             System.exit(0);
         }
@@ -32,6 +32,7 @@ public class Main{
     public static String findPattern(String findIn, String findThis){
         try{
         String pattern = "";
+        findThis = findThis.replaceAll("\\s", "");
         for(int i = 0; i < findThis.length(); i++){
             for(int j = 0; j < findIn.length(); j++){
                 if(findThis.charAt(i) == findIn.substring(j).charAt(0)){
