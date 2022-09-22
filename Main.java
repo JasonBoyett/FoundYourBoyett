@@ -33,6 +33,7 @@ public class Main{
         try{
         String pattern = "";
         findThis = findThis.replaceAll("\\s", "");
+        findThis = findThis.replaceAll(" ", "");
         for(int i = 0; i < findThis.length(); i++){
             for(int j = 0; j < findIn.length(); j++){
                 if(findThis.charAt(i) == findIn.substring(j).charAt(0)){
